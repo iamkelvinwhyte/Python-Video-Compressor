@@ -2,7 +2,7 @@ from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 from app import create_app, db
 from app.auth.model import Auth_DB
-from app.wallet.model import Wallet_DB
+
 
 
 app = create_app('config')

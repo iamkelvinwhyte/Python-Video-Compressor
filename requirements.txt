@@ -80,11 +80,9 @@ requests==2.23.0
 rlp==2.0.0
 rusty-rlp==0.1.15
 scikit-learn==0.22.2.post1
-scipy==1.4.1
 six==1.14.0
 SQLAlchemy==1.3.13
 toolz==0.11.1
-twilio==6.48.0
 typing==3.7.4.1
 urllib3==1.25.8
 varint==1.0.2

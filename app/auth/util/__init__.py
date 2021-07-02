@@ -1,9 +1,11 @@
 
+from enum import unique
 from random import randint
 from PIL import Image
 from io import BytesIO
 import base64,os
 from app import  db
+import uuid
 
 
 
@@ -35,3 +37,13 @@ def save_changes(data):
 
 def send_email():
    return True
+
+def randomUUID():
+    unique_str= uuid.uuid1()
+    return unique_str.hex
+
+def img_to_base64(path):
+
+    with open(path, "rb") as img_file:
+        image_base = base64.b64encode(img_file.read())
+    return image_base

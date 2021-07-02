@@ -1,9 +1,17 @@
 FROM python:3.6-stretch
 
-LABEL Author="Odafe Kevin"
-LABEL E-mail="xsaysoft@gmail.com"
+LABEL Author="Odafe Kelvin"
+LABEL E-mail="iamkelvinwhyte@gmail.com"
 
-COPY . /blurapp
-WORKDIR /blurapp
+COPY . /ffmpeg
+WORKDIR /ffmpeg
+
+######################################################################################################################
+################################################# INSTALLING FFMPEG ##################################################
+RUN apt-get -y update
+
+RUN apt-get install -y ffmpeg
+######################################################################################################################
+######################################################################################################################
 RUN pip install -r requirements.txt
 CMD [ "python", "run.py" ]

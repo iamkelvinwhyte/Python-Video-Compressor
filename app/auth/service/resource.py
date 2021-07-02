@@ -23,22 +23,7 @@ def save_changes(data):
     db.session.commit()
 
 def sms_token(to,msg):
-    url = "https://api.appmartgroup.com/v3/sms/postSend"
-  
-    headers = {
-    'Content-Type': 'application/json',
-    'apiKey': 'T58C6WXxkxibslDnAjk6',
-    'Accept': 'application/json',
-    'Connection': 'Keep-Alive',
-    }
-  
-    payload = "{\n\t\"to\": \""+to+"\",\n    \"from\": \"VERIPAY\",\n    \"vendor_code\": \"7075365398\",\n    \"msg\": \""+msg+"\"\n}"
-    try:
-        response = requests.request("POST",url, headers=headers,data=payload)
-    except ValueError:
-          return False
-
-    return response
+    return False
 
 
 #Generate Barcode 

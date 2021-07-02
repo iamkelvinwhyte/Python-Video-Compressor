@@ -1,5 +1,5 @@
 from flask import Flask ,request,Response
-from app.auth.model import SECRET_KEY ,auth,authToken
+from config import SECRET_KEY ,auth,authToken
 from functools import wraps
 import jwt,secrets,datetime
 from urllib.parse import urlencode, quote_plus

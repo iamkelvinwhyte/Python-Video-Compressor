@@ -8,16 +8,16 @@ db = SQLAlchemy()
 ma = Marshmallow()
  
 def create_app(config_filename):
-    app = Flask(__name__)
+# set the project root directory as the static folder, you can set others.
+    app = Flask(__name__,static_url_path='')
     CORS(app)
     app.config.from_object(config_filename)
+   
     
     from app.auth import app_service
     #from app.chat import chat_service
-    from app.wallet import wallet_service
     app.register_blueprint(app_service, url_prefix='/api')
-    app.register_blueprint(wallet_service, url_prefix='/wallet')
-    # app.register_blueprint(chat_service, url_prefix='/chat')
+
   
 
     db.init_app(app)
